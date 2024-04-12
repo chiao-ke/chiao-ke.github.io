@@ -2,94 +2,78 @@
 <html>
 
 <head>
-    <title>About Charlie</title>
+    <title>Charlie's Portfolio</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
         }
 
-        .image-container {
-            margin-bottom: 30px;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .text-container {
-            position: relative;
-            margin-bottom: 30px;
-        }
-
-        .text-background {
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            background-color: rgba(255, 255, 255, 0.8);
-            filter: blur(10px);
-            z-index: -1;
-            border-radius: 10px;
-        }
-
-        .text {
-            padding: 20px;
+        .container {
+            width: 600px;
             text-align: center;
         }
 
-        .text p {
-            margin: 10px 0;
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
         }
 
-        .button-container {
+        .text-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .text-box p {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .buttons {
+            margin-top: 20px;
             display: flex;
             justify-content: center;
         }
 
-        .button-container a {
+        .buttons a {
             margin: 0 10px;
         }
 
-        .button-container img {
-            max-width: 100%;
-            height: auto;
+        .buttons img {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="image-container">
-            <img src="me.jpg" alt="Blue Rounded Rectangle">
+        <img src="image.jpg" alt="Profile Picture" class="profile-pic">
+        <div class="text-box">
+            <p>Hello, I am Charlie.</p>
+            <p>I'm a graduate student.</p>
+            <p>Strive to become a Web3 engineer.</p>
+            <p>Now exploring deep learning with PyTorch and TensorFlow.</p>
+            <p>Learn and try Web3 development in my free time.</p>
+            <p>I had learned Solidity for a short time. And now, I'm building on TON.</p>
         </div>
-        <div class="text-container">
-            <div class="text-background"></div>
-            <div class="text">
-                <p>Hello, I am Charlie.</p>
-                <p>I'm a graduate student.</p>
-                <p>Strive to become a Web3 engineer.</p>
-                <p>Now exploring deep learning with PyTorch and TensorFlow.</p>
-                <p>Learn and try Web3 development in my free time.</p>
-                <p>I had learned Solidity for a short time. And now, I'm building on TON.</p>
-            </div>
-        </div>
-        <div class="button-container">
-            <a href="https://www.linkedin.com/in/%E8%83%A1%E5%96%AC%E8%BB%BB/" target="_blank"><img src="linkedin.png"
-                    alt="Button 1"></a>
-            <a href="https://github.com/chiao-ke" target="_blank"><img src="github.png" alt="Button 2"></a>
+        <div class="buttons">
+            <a href="https://www.example1.com"><img src="image2.png" alt="Button 1"></a>
+            <a href="https://www.example2.com"><img src="image3.png" alt="Button 2"></a>
         </div>
     </div>
 </body>
