@@ -111,8 +111,9 @@
         }
 
         .right-block-bottom {
+            position: relative;
             height: 73px;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(232, 232, 232, 0.6);
             border-radius: 30px;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -122,6 +123,25 @@
             align-items: center;
             font-size: 20px;
             margin-bottom: 42px;
+            overflow: hidden;
+        }
+
+        .light {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 3;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
         }
     </style>
 </head>
@@ -135,12 +155,12 @@
             <div class="bottom-left-block">
                 <div class="bottom-left-block-1">
                     <a href="https://www.linkedin.com/in/%E8%83%A1%E5%96%AC%E8%BB%BB/" target="_blank">
-                        <img src="image2 copy.png" alt="Button 1">
+                        <img src="image2.png" alt="Button 1" id="button1">
                     </a>
                 </div>
                 <div class="bottom-left-block-2">
                     <a href="https://github.com/chiao-ke" target="_blank">
-                        <img src="image3.png" alt="Button 2">
+                        <img src="image3.png" alt="Button 2" id="button2">
                     </a>
                 </div>
             </div>
@@ -154,10 +174,65 @@
                 Try Web3 development in my free time.
             </div>
             <div class="right-block-bottom">
-                <p>Email: chiaoke@outlook.com</p>
+                <div class="light"></div>
+                <div class="content">
+                    <p>Email: chiaoke@outlook.com</p>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        // Get references to the button images
+        const button1 = document.getElementById('button1');
+        const button2 = document.getElementById('button2');
+
+        // Add event listeners for mouse events
+        button1.addEventListener('mouseenter', handleButtonMouseEnter);
+        button1.addEventListener('mouseleave', handleButtonMouseLeave);
+        button2.addEventListener('mouseenter', handleButtonMouseEnter);
+        button2.addEventListener('mouseleave', handleButtonMouseLeave);
+
+        // Function to handle mouse enter event for buttons
+        function handleButtonMouseEnter(event) {
+            event.target.style.transform = 'scale(1.1)';
+            event.target.style.boxShadow = '3px 3px 10px rgba(0, 0, 0, 0.3)';
+        }
+
+        // Function to handle mouse leave event for buttons
+        function handleButtonMouseLeave(event) {
+            event.target.style.transform = 'scale(1)';
+            event.target.style.boxShadow = '3px 3px 10px rgba(0, 0, 0, 0.1)';
+        }
+
+        // Get reference to the right-block-bottom element
+        const rightBlockBottom = document.querySelector('.right-block-bottom');
+        const light = document.querySelector('.light');
+
+        // Add event listener for mouse movement
+        rightBlockBottom.addEventListener('mousemove', handleMouseMove);
+        rightBlockBottom.addEventListener('mouseenter', handleRightBlockMouseEnter);
+        rightBlockBottom.addEventListener('mouseleave', handleRightBlockMouseLeave);
+
+        // Function to handle mouse move event
+        function handleMouseMove(event) {
+            const rect = rightBlockBottom.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            light.style.left = `${x}px`;
+            light.style.top = `${y}px`;
+        }
+
+        // Function to handle mouse enter event for right-block-bottom
+        function handleRightBlockMouseEnter() {
+            light.style.opacity = 1;
+        }
+
+        // Function to handle mouse leave event for right-block-bottom
+        function handleRightBlockMouseLeave() {
+            light.style.opacity = 0;
+        }
+    </script>
 </body>
 
 </html>
