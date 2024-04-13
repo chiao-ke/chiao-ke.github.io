@@ -53,9 +53,6 @@
             max-height: 98%;
             object-fit: contain;
             border-radius: 35px;
-            /* backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.8); */
             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -88,23 +85,42 @@
             max-height: 100%;
             object-fit: contain;
             border-radius: 30px;
-            /* backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.8); */
             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
         }
 
         .right-block {
             flex: 2;
             display: flex;
-            justify-content: flex-start;
-            align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
+            /* margin-top: -8px; */
+            margin-right: 36px;
         }
 
         .right-block-text {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: left;
-            font-size: 23px;
+            font-size: 24px;
             line-height: 1.5;
+            margin-bottom: 15px;
+            margin-left: -11px;
+        }
+
+        .right-block-bottom {
+            height: 75px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            margin-bottom: 45px;
         }
     </style>
 </head>
@@ -134,7 +150,10 @@
                 I'm a graduate student.<br>
                 Strive to become a Web3 engineer.<br>
                 Now exploring deep learning with PyTorch.<br>
-                Learn and try Web3 development in my free time.
+                Try Web3 development in my free time.
+            </div>
+            <div class="right-block-bottom">
+                <p>Email: chiaoke@outloook.com</p>
             </div>
         </div>
     </div>
