@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Chiao-Ke's Portfolio</title>
+    <title>About Chiao-Ke</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
         body {
@@ -10,71 +10,130 @@
             padding: 0;
             background-image: url('background.jpg');
             background-size: cover;
+            background-repeat: no-repeat;
             background-position: center;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
         }
 
-        .container {
-            width: 80vw;
-            max-width: 600px;
-            text-align: center;
-        }
-
-        .profile-pic {
-            width: 200px;
-            height: 200px;
-            border-radius: 20px;
-        }
-
-        .text-box {
+        .rounded-rectangle {
+            width: 600px;
+            height: 320px;
             background-color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
             border-radius: 20px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: row;
             padding: 20px;
-            margin-top: 20px;
+            box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .text-box p {
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            line-height: 1.5;
-            color: #333;
+        .left-block {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-right: 20px;
         }
 
-        .buttons {
-            margin-top: 20px;
+        .top-left-block {
             display: flex;
             justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
         }
 
-        .buttons a {
-            margin: 0 10px;
-        }
-
-        .buttons img {
-            width: 100px;
-            height: 100px;
+        .top-left-block img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
             border-radius: 20px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .bottom-left-block {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .bottom-left-block-1,
+        .bottom-left-block-2 {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bottom-left-block-1 a,
+        .bottom-left-block-2 a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            height: 90%;
+        }
+
+        .bottom-left-block-1 img,
+        .bottom-left-block-2 img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .right-block {
+            flex: 2;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .right-block-text {
+            text-align: left;
+            font-size: 18px;
+            line-height: 1.5;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <img src="image.jpg" alt="Profile Picture" class="profile-pic">
-        <div class="text-box">
-            <p>Hello, I am Chiao-Ke Hu.</p>
-            <p>I'm a graduate student.</p>
-            <p>Strive to become a Web3 engineer.</p>
-            <p>Now exploring deep learning with PyTorch and TensorFlow.</p>
-            <p>Learn and try Web3 development in my free time.</p>
+    <div class="rounded-rectangle">
+        <div class="left-block">
+            <div class="top-left-block">
+                <img src="image.jpg" alt="Image">
+            </div>
+            <div class="bottom-left-block">
+                <div class="bottom-left-block-1">
+                    <a href="https://www.linkedin.com/in/%E8%83%A1%E5%96%AC%E8%BB%BB/" target="_blank">
+                        <img src="image2.png" alt="Button 1">
+                    </a>
+                </div>
+                <div class="bottom-left-block-2">
+                    <a href="https://github.com/chiao-ke" target="_blank">
+                        <img src="image3.png" alt="Button 2">
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="buttons">
-            <a href="https://www.linkedin.com/in/%E8%83%A1%E5%96%AC%E8%BB%BB/"><img src="image2.png" alt="Button 1"></a>
-            <a href="https://github.com/chiao-ke"><img src="image3.png" alt="Button 2"></a>
+        <div class="right-block">
+            <div class="right-block-text">
+                Hello, I am Hu Chiao-Ke.<br>
+                I'm a graduate student.<br>
+                Strive to become a Web3 engineer.<br>
+                Now exploring deep learning with PyTorch and TensorFlow.<br>
+                Learn and try Web3 development in my free time.
+            </div>
         </div>
     </div>
 </body>
