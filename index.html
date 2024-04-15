@@ -130,13 +130,13 @@
             position: absolute;
             width: 200px;
             height: 200px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
             border-radius: 50%;
             pointer-events: none;
             transform: translate(-50%, -50%);
             opacity: 0;
             transition: opacity 0.3s ease;
-            z-index: 3;
+            z-index: 2;
         }
 
         .content {
@@ -176,7 +176,7 @@
             <div class="right-block-bottom">
                 <div class="light"></div>
                 <div class="content">
-                    <p>Email: chiaoke@outlook.com</p>
+                    <p z-index: 4>Email: chiaoke@outlook.com</p>
                 </div>
             </div>
         </div>
