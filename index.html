@@ -61,7 +61,6 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            margin-top: 20px;
         }
 
         .contact-info a {
@@ -90,6 +89,7 @@
             overflow: hidden; /* 防止圖片溢出容器 */
         }
 
+        /* 新增：控制圖片大小的關鍵 CSS */
         .photo-container img {
             width: 100%;
             height: 100%;
@@ -238,6 +238,11 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+
+            /* 響應式時讓 contact-info 居中對齊 */
+            .contact-info {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -253,7 +258,7 @@
                 </div>
             </div>
             <div class="photo-container">
-                <div><img src="assets/profile-photo.jpg" alt="Chiao-Ke Hu"></div>
+                <img src="assets/profile-photo.jpg" alt="Chiao-Ke Hu">
             </div>
         </div>
 
