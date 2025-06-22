@@ -1,280 +1,412 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>About Chiao-Ke</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <meta name="description" content="I'm Hu Chiao-Ke. Nice to meet you.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiao-Ke Hu | AI/ML Engineer</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            background-image: url('background.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            background: white;
+            padding: 60px 50px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 40px;
             align-items: center;
         }
 
-        .rounded-rectangle {
-            width: 800px;
-            height: 418px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 35px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            display: flex;
-            flex-direction: row;
-            padding: 20px;
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+        .header-text h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #2c2c2c;
         }
 
-        .left-block {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-right: 36px;
-            margin-left: 19px;
+        .header-text .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
         }
 
-        .top-left-block {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 38px;
-            margin-top: -8px;
-        }
-
-        .top-left-block img {
-            max-width: 98%;
-            max-height: 98%;
-            object-fit: contain;
-            border-radius: 35px;
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .bottom-left-block {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-
-        .bottom-left-block-1,
-        .bottom-left-block-2 {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .bottom-left-block-1 a,
-        .bottom-left-block-2 a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 80%;
-            height: 80%;
-        }
-
-        .bottom-left-block-1 img,
-        .bottom-left-block-2 img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            border-radius: 30px;
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .right-block {
-            flex: 2;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            /* margin-top: -8px; */
-            margin-right: 36px;
-        }
-
-        .right-block-text {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: left;
-            font-size: 24px;
-            line-height: 1.5;
+        .location {
+            color: #999;
+            font-size: 0.9rem;
             margin-bottom: 15px;
-            margin-left: -11px;
+            font-weight: 300;
         }
 
-        .right-block-bottom {
-            position: relative;
-            height: 73px;
-            background-color: rgba(232, 232, 232, 0.6);
-            border-radius: 30px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+        .contact-info {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 20px;
-            margin-bottom: 42px;
-            overflow: hidden;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
         }
 
-        .light {
-            position: absolute;
+        .contact-info a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #333;
+        }
+
+        .photo-container {
             width: 200px;
             height: 200px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 2;
-        }
-
-        .content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .email-container {
+            background: #e8e8e8;
+            border-radius: 16px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            width: 100%;
-        }
-
-        .copy-button {
-            background-color: #ffffff00;
-            border: none;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
             justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            margin-left: 10px;
-            /* box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); */
+            color: #999;
+            font-size: 0.9rem;
+            text-align: center;
+            line-height: 1.4;
+            overflow: hidden; /* 防止圖片溢出容器 */
         }
 
-        .copy-button img {
-            width: 20px;
-            height: 20px;
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 保持比例並填滿容器 */
+            border-radius: 16px; /* 與容器相同的圓角 */
+        }
+
+        .section {
+            background: white;
+            padding: 40px 50px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #2c2c2c;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: #f0f0f0;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #666;
+            border: 1px solid #e0e0e0;
+        }
+
+        .project {
+            margin-bottom: 35px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .project:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .project h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .project-meta {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tech-tag {
+            background: #e8e8e8;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        .education-item {
+            margin-bottom: 25px;
+        }
+
+        .education-item h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .education-meta {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .education-note {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .header {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 40px 30px;
+            }
+
+            .photo-container {
+                justify-self: center;
+                margin-top: 20px;
+                width: 150px;
+                height: 150px;
+            }
+
+            .section {
+                padding: 30px 25px;
+            }
+
+            .header-text h1 {
+                font-size: 2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-
 <body>
-    <div class="rounded-rectangle">
-        <div class="left-block">
-            <div class="top-left-block">
-                <img src="image.jpg" alt="Image">
+    <div class="container">
+        <div class="header">
+            <div class="header-text">
+                <h1>Chiao-Ke Hu</h1>
+                <div class="subtitle">AI/ML Engineer & Agent Builder</div>
+                <div class="location">Taipei, Taiwan</div>
+                <div class="contact-info">
+                    <a href="mailto:chiaoke@outlook.com">chiaoke@outlook.com</a>
+                </div>
             </div>
-            <div class="bottom-left-block">
-                <div class="bottom-left-block-1">
-                    <a href="https://www.linkedin.com/in/%E8%83%A1%E5%96%AC%E8%BB%BB/" target="_blank">
-                        <img src="image2.png" alt="Button 1" id="button1">
-                    </a>
-                </div>
-                <div class="bottom-left-block-2">
-                    <a href="https://github.com/chiao-ke" target="_blank">
-                        <img src="image3.png" alt="Button 2" id="button2">
-                    </a>
-                </div>
+            <div class="photo-container">
+                <div><img src="assets/profile-photo.jpg" alt="Chiao-Ke Hu"></div>
             </div>
         </div>
-        <div class="right-block">
-            <div class="right-block-text">
-                Hello, I am Hu Chiao-Ke.<br>
-                I'm a graduate student.<br>
-                Strive to become a Web3 engineer.<br>
-                Now exploring deep learning with PyTorch.<br>
-                Try Web3 development in my free time.
-            </div>
-            <div class="right-block-bottom">
-                <div class="light"></div>
-                <div class="content">
-                    <div class="email-container">
-                        <p z-index: 4>Email: chiaoke@outlook.com</p>
-                        <button class="copy-button" onclick="copyEmail()">
-                            <img src="copy.png" alt="Copy Icon">
-                            <!-- <a href="https://www.flaticon.com/free-icons/paper" title="paper icons">Paper icons created by Gregor Cresnar - Flaticon</a> -->
-                        </button>
+
+        <div class="section">
+            <h2>About</h2>
+            <p style="color: #555; line-height: 1.7;">
+                Final-year graduate student in Computer Science with a passion for building AI-driven applications.
+                Experienced in computer vision, LLM fine-tuning, and AI agent prototyping using PyTorch, TensorFlow, and CUDA.
+                Currently exploring Web3 development and multi-agent systems in my free time.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>AI/Machine Learning</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">MediaPipe</span>
+                        <span class="skill-tag">LoRA Fine-tuning</span>
+                        <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">LLM APIs</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Swift</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">CUDA</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Assembly (Holtek MCU)</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Platforms & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Ubuntu</span>
+                        <span class="skill-tag">macOS</span>
+                        <span class="skill-tag">iOS</span>
+                        <span class="skill-tag">Discord Bot</span>
+                        <span class="skill-tag">LLM APIs (Grok, Gemini)</span>
+                        <span class="skill-tag">Mem0</span>
+                        <span class="skill-tag">Blockchain (learning)</span>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="section">
+            <h2>Featured Projects</h2>
+            <div class="project">
+                <h3>iOS LLM Integration App</h3>
+                <div class="project-meta">2025 • Cross-Platform Development</div>
+                <div class="project-description">
+                    Developing an iOS application combining LLM APIs with iOS Shortcuts for on-device task automation.
+                </div>
+                <div class="project-tech">
+                    <span class="tech-tag">Swift</span>
+                    <span class="tech-tag">iOS</span>
+                    <span class="tech-tag">LLM APIs</span>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3>Multi-LLM Discord Bot</h3>
+                <div class="project-meta">2025 • AI Agent Development</div>
+                <div class="project-description">
+                    Built Discord bot integrating Grok and Gemini LLM APIs with Mem0 memory for persistent conversational memory.
+                </div>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">LLM APIs</span>
+                    <span class="tech-tag">Mem0</span>
+                    <span class="tech-tag">Discord</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>CAE Auto-Colorization Model</h3>
+                <div class="project-meta">2023 • Deep Learning Project</div>
+                <div class="project-description">
+                    Built Convolutional Autoencoder using TensorFlow for automatic image colorization. Implemented GPU-accelerated training pipeline.
+                </div>
+                <div class="project-tech">
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">CUDA</span>
+                    <span class="tech-tag">Image Processing</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>Gesture Recognition System</h3>
+                <div class="project-meta">2022 • Honorable Mention, National College Student Competition</div>
+                <div class="project-description">
+                    Developed gesture control system using OpenCV and MediaPipe for real-time hand tracking and gesture recognition.
+                    Enabled computer interface interaction through vision-based hand gestures.
+                </div>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">OpenCV</span>
+                    <span class="tech-tag">MediaPipe</span>
+                    <span class="tech-tag">Computer Vision</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>Holtek MCU Programming</h3>
+                <div class="project-meta">2021 • Self-Driven MCU Development</div>
+                <div class="project-description">
+                    Wrote full Holtek assembly language routines for microcontroller control tasks using documentation and self-study.
+                    Shared resources and explained usage to peers.
+                </div>
+                <div class="project-tech">
+                    <span class="tech-tag">Assembly</span>
+                    <span class="tech-tag">MCU</span>
+                    <span class="tech-tag">Low-level Programming</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>National Changhua University of Education</h3>
+                <div class="education-meta">M.S. in Computer Science and Information Engineering • 2023 - 2025</div>
+                <div class="education-note">Focus: Machine Learning, Computer Vision, AI Agent Systems</div>
+            </div>
+            <div class="education-item">
+                <h3>National Changhua University of Education</h3>
+                <div class="education-meta">B.S. in Computer Science and Information Engineering • 2019 - 2023</div>
+                <div class="education-note">Coursework: Computer Vision, Image Processing, Embedded Systems, Machine Learning</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Languages</h2>
+            <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+                <div>
+                    <strong style="color: #333;">Chinese</strong>
+                    <div style="color: #666; font-size: 0.9rem;">Native</div>
+                </div>
+                <div>
+                    <strong style="color: #333;">English</strong>
+                    <div style="color: #666; font-size: 0.9rem;">Professional proficiency (TOEIC 700 - Expired)</div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <script>
-        // Get references to the button images
-        const button1 = document.getElementById('button1');
-        const button2 = document.getElementById('button2');
-
-        // Add event listeners for mouse events
-        button1.addEventListener('mouseenter', handleButtonMouseEnter);
-        button1.addEventListener('mouseleave', handleButtonMouseLeave);
-        button2.addEventListener('mouseenter', handleButtonMouseEnter);
-        button2.addEventListener('mouseleave', handleButtonMouseLeave);
-
-        // Function to handle mouse enter event for buttons
-        function handleButtonMouseEnter(event) {
-            event.target.style.transform = 'scale(1.1)';
-            event.target.style.boxShadow = '3px 3px 10px rgba(0, 0, 0, 0.3)';
-        }
-
-        // Function to handle mouse leave event for buttons
-        function handleButtonMouseLeave(event) {
-            event.target.style.transform = 'scale(1)';
-            event.target.style.boxShadow = '3px 3px 10px rgba(0, 0, 0, 0.1)';
-        }
-
-        // Get reference to the right-block-bottom element
-        const rightBlockBottom = document.querySelector('.right-block-bottom');
-        const light = document.querySelector('.light');
-
-        // Add event listener for mouse movement
-        rightBlockBottom.addEventListener('mousemove', handleMouseMove);
-        rightBlockBottom.addEventListener('mouseenter', handleRightBlockMouseEnter);
-        rightBlockBottom.addEventListener('mouseleave', handleRightBlockMouseLeave);
-
-        // Function to handle mouse move event
-        function handleMouseMove(event) {
-            const rect = rightBlockBottom.getBoundingClientRect();
-            const x = event.clientX - rect.left;
-            const y = event.clientY - rect.top;
-            light.style.left = `${x}px`;
-            light.style.top = `${y}px`;
-        }
-
-        // Function to handle mouse enter event for right-block-bottom
-        function handleRightBlockMouseEnter() {
-            light.style.opacity = 1;
-        }
-
-        // Function to handle mouse leave event for right-block-bottom
-        function handleRightBlockMouseLeave() {
-            light.style.opacity = 0;
-        }
-
-        // Function to copy the email to clipboard
-        function copyEmail() {
-            const email = 'chiaoke@outlook.com';
-            navigator.clipboard.writeText(email).then(() => {
-                alert('Email copied to clipboard!');
-            }).catch((error) => {
-                console.error('Failed to copy email:', error);
-            });
-        }
-    </script>
 </body>
-
 </html>
