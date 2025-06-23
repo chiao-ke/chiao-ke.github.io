@@ -31,6 +31,12 @@
             padding: 40px 20px;
         }
 
+        .container-footer {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0px 20px 0 20px;
+        }
+
         .header {
             background: white;
             padding: 60px 50px;
@@ -259,6 +265,48 @@
             transform: translateY(-1px);
         }
 
+        /* 在現有 CSS 中新增這些樣式 */
+        .experience-item {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .experience-main p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .experience-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .status-indicator {
+            font-size: 0.8rem;
+        }
+
+        .contact-cta {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .contact-cta:hover {
+            background: #555;
+            transform: translateY(-1px);
+        }
+
         .education-item {
             margin-bottom: 25px;
         }
@@ -279,6 +327,66 @@
         .education-note {
             font-size: 0.9rem;
             color: #777;
+        }
+
+        /* Footer 樣式 */
+        .footer {
+            background: white;
+            margin-top: auto;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-radius: 8px 8px 0 0;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .footer-main {
+            flex: 1;
+        }
+
+        .footer-main p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1px;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .footer-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        .status-indicator {
+            font-size: 0.8rem;
+        }
+
+        .footer-copyright {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 50px 30px;
+            /* border-top: 1px solid #eee; */
+        }
+
+        .footer-copyright p {
+            font-size: 0.85rem;
+            color: #888;
+            font-weight: 300;
+            margin: 0;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
         }
 
         @media (max-width: 768px) {
@@ -318,6 +426,34 @@
 
             .social-links {
                 justify-content: center;
+            }
+
+            .experience-item {
+                text-align: center;
+            }
+            
+            .contact-cta {
+                align-self: center;
+            }
+
+            /* Footer 響應式 */
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 25px;
+                padding: 30px 25px;
+            }
+
+            .footer-links {
+                align-items: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-copyright {
+                padding: 0 25px 25px;
             }
         }
     </style>
@@ -466,6 +602,24 @@
             </div>
         </div>
 
+        <!-- 在 Education section 之前新增 -->
+        <div class="section">
+            <h2>Work Experience</h2>
+            <div class="experience-item">
+                <div class="experience-main">
+                    <p>Currently seeking opportunities to apply my AI/ML expertise in real-world applications. 
+                    Open to roles in machine learning engineering, AI agent development, and computer vision projects.</p>
+                    <div class="experience-status">
+                        <span class="status-indicator">🟢</span> 
+                        Available for full-time positions starting 2025
+                    </div>
+                </div>
+                <div class="experience-cta">
+                    <a href="mailto:chiaoke@outlook.com" class="contact-cta">Let's discuss opportunities</a>
+                </div>
+            </div>
+        </div>
+
         <div class="section">
             <h2>Education</h2>
             <div class="education-item">
@@ -493,6 +647,18 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container-footer">
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <p>Thanks for stopping by! Currently exploring the intersection of AI and human creativity.</p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 Chiao-Ke Hu • Crafted with passion in Taipei 🇹🇼</p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
